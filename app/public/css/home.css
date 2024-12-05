@@ -1,0 +1,73 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 5px 14px rgba(0,0,0,.1607843137254902);
+    border-radius: 15px;
+    width: 400px;
+    height: 245px;
+    padding: 10px;
+    position: relative;
+}
+
+.legend {
+    font-size: 13px !important;
+    font-weight: 600;
+    color: #007bff;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    gap: 10px;
+}
+
+.ano {
+    font-size: 13px;
+    color: gray;
+}
+
+p {
+text-align: justify;
+font-size: 14px;
+}
+
+img {
+    border-radius: 5px;
+    box-shadow: 0 5px 14px rgba(0,0,0,.1607843137254902);
+    width: 150px;
+    height: 225px;
+    border: none;
+}
+
+.desc {
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    width: 200px;
+}
+
+form button {
+    background-color: #007bff;
+    width: 45px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    transition: .3s;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #0066d3;
+    transform: translateY(-4px);
+}
