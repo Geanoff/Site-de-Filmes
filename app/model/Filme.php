@@ -49,13 +49,22 @@ class Filme {
         return $stmt->rowCount() > 0;
     }
 
-    public function adicionar_filme($nome, $ano, $descricao) {   
-        $query = "INSERT INTO $this->tabela (nome, ano, descricao) VALUES (:nome, :ano, :descricao)";
+    public function adicionar_filme($nome, $ano, $descricao, $imagem) {   
+        if ($imagem) {
+            $query = "INSERT INTO $this->tabela (nome, ano, descricao, imagem) VALUES (:nome, :ano, :descricao, :imagem)";
+        }
+        else { 
+            $query = "INSERT INTO $this->tabela (nome, ano, descricao) VALUES (:nome, :ano, :descricao)";
+        }
+        
         $stmt = $this->pdo->prepare($query);
 
-        $stmt->bindParam(":nome", $nome, PDO::PARAM_STR);
-        $stmt->bindParam(":ano", $ano, PDO::PARAM_INT);
-        $stmt->bindParam(":descricao", $descricao, PDO::PARAM_STR);
+        $stmt->bindParam(":nome", $nome);
+        $stmt->bindParam(":ano", $ano);
+        $stmt->bindParam(":descricao", $descricao);
+        if ($imagem) { 
+            $stmt->bindParam(":imagem", $imagem);
+        }
         $stmt->execute();
         if ($stmt) {
             return header('Location: listar.php?mensagem=sucesso');

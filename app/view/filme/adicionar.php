@@ -8,7 +8,7 @@
         $imagem = $_POST['imagem'];
 
         $filmeModel = new Filme();
-        $filmeModel->adicionar_filme($nome, $ano, $descricao);  
+        $filmeModel->adicionar_filme($nome, $ano, $descricao, $imagem);  
     }                                                                                                                                                                        
 ?>
 
